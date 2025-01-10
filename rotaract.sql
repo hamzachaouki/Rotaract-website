@@ -1,0 +1,11 @@
+CREATE DATABASE rotaract;
+
+USE rotaract;
+
+CREATE TABLE rotaract (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message VARCHAR(2550) NOT NULL
+);

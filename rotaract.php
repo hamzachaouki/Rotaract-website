@@ -18,11 +18,7 @@
         $subject = htmlspecialchars($_POST['subject']);
         $message = htmlspecialchars($_POST['message']);
 
-        // Display the submitted data
-        echo "<p>Name: $name</p>";
-        echo "<p>Email: $email</p>";
-        echo "<p>Subject: $subject</p>";
-        echo "<p>Message: $message</p>";
+        
 
         // Insert data into the database
         $stmt = $conn->prepare("INSERT INTO rotaract (nom, email, subject, message) VALUES (?, ?, ?, ?)");
@@ -30,6 +26,7 @@
 
         if ($stmt->execute()) {
             echo "<p>Data inserted successfully into the database.</p>";
+            echo '<img src="assets/images/g.gif" alt="Success GIF">';
         } else {
             echo "<p>Error: " . $stmt->error . "</p>";
         }
